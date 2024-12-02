@@ -1,0 +1,41 @@
+body{
+    background-image: url(../imagens/background.jpg);
+    background-size: cover;
+    background-position: bottom;
+}
+
+.contato-section{
+    width: 50%;
+    margin: auto;
+    background-color: #230c20;
+    color: white;
+    text-align: center;
+    padding: 30px;
+}
+
+.contato-section__itens{
+    
+    
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.contato-section__itens a{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 6px;
+}
+
+.contato-section__itens a:hover{
+    background-color: rgb(214, 177, 177);
+    color: #230c20;
+}
+
+.contato-section__itens img{
+    width: 70px;
+}
