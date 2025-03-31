@@ -1,41 +1,106 @@
-html, body{
-    min-height: 100%;
+html,
+body {
+  min-height: 100%;
 }
 
-body{
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+body {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
 }
 
-.header-home{
-    /* background-color: yellow; */
+.hide {
+    display: none;
+}
+
+.header-home {
+  /* background-color: yellow; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+  text-transform: uppercase;
+}
+
+.header-home p {
+  padding: 0 80px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.hamburguer{
+    display: none;
+}
+
+.ul-home {
+  /* background-color: aqua; */
+  display: flex;
+  gap: 30px;
+  padding: 0 80px;
+  list-style: none;
+}
+
+.ul-home__itens a {
+  color: white;
+  text-decoration: none;
+  padding: 12px 16px;
+  border-radius: 6px;
+  display: block;
+}
+
+.ul-home__itens a:hover {
+  background-color: #230c20;
+}
+
+@media (max-width: 850px) {
+  .ul-home {
+    flex-direction: column;
+    position: absolute;
+    top: 4rem;
+    right: 0;
+    left: 0;
+    background-color: rgb(0, 0, 0, 0.5);
+    gap: 0;
+    overflow: hidden;
+    max-height: 0;
+    transition: .3s;
+  }
+
+  #menu {
+    position: relative;
+  }
+
+  .hamburguer {
+    width: 30px;
+    height: 20px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
     justify-content: space-between;
-    color: white;
-    text-transform: uppercase;
-}
+    cursor: pointer;
+    position: relative;
+  }
 
-.header-home p{
-    padding: 0 80px;
-    font-size: 24px;
-    font-weight: bold;
-}
+  .hamburguer span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: 0.3s;
+  }
 
-.ul-home{
-    /* background-color: aqua; */
-    display: flex;
-    gap: 30px;
-    padding: 0 80px;
-    list-style: none;
-}
+  #menu:checked + .hamburguer span:nth-child(1){
 
-.ul-home__itens a{
-    color: white;
-    text-decoration: none;
-    padding: 12px 16px;
-    border-radius: 6px;
-}
+    transform: translateY(8.5px) rotate(45deg);
+  }
 
-.ul-home__itens a:hover{
-    background-color: #230c20;
+  #menu:checked + .hamburguer span:nth-child(2){
+    display: none;
+  }
+
+  #menu:checked + .hamburguer span:nth-child(3){
+    transform: translateY(-8.5px) rotate(-45deg);
+  }
+
+  #menu:checked + .hamburguer + nav .ul-home{
+    max-height: 200px;
+    opacity: 1;
+  }
 }

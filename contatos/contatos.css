@@ -40,3 +40,9 @@ body{
 .contato-section__itens img{
     width: 70px;
 }
+
+@media (max-width: 767px) {
+    .contato-section{
+        width: 80%;
+    }
+}
